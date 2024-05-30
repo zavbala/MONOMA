@@ -3,7 +3,7 @@ import { z } from "zod";
 import FieldSet from "./FieldSet";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext } from "react";
-import { GlobalContext } from "@/app/register/page";
+import { GlobalContext } from "@/context/Main";
 import Selector from "./Selector";
 
 const schema = z.object({

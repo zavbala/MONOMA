@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext, useEffect, useState } from "react";
-import { GlobalContext } from "@/app/register/page";
+import { GlobalContext } from "@/context/Main";
 import { useRouter } from "next/navigation";
 
 const schema = z.object({
