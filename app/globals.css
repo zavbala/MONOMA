@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  /* outline: 1px solid red; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .card {
+    @apply bg-white border shadow-md rounded-lg overflow-hidden md:w-[600px] md:min-h-[700px] min-h-fit mx-auto p-7;
+  }
+
+  .btn {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-500 text-white font-bold py-2 px-4 rounded;
+  }
+
+  .stepper {
+    @apply md:mt-0 mt-5;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+@layer base {
+  form {
+    @apply md:h-[700px] flex flex-col justify-between;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  button[disabled] {
+    @apply cursor-not-allowed opacity-50;
   }
 }
