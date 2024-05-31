@@ -3,33 +3,33 @@
 @tailwind utilities;
 
 * {
-  /* outline: 1px solid red; */
+    /* outline: 1px solid red; */
 }
 
 @layer components {
-  .card {
-    @apply bg-white border shadow-md rounded-lg overflow-hidden md:w-[600px] md:min-h-[700px] min-h-fit mx-auto p-7;
-  }
+    .card {
+        @apply bg-white border shadow-md rounded-lg overflow-hidden md:w-[600px] md:min-h-[700px] min-h-fit mx-auto p-7;
+    }
 
-  .btn {
-    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
-  }
+    .btn {
+        @apply bg-blue-500 text-white font-bold py-2 px-4 rounded lg:hover:bg-blue-600;
+    }
 
-  .btn-secondary {
-    @apply bg-gray-500 text-white font-bold py-2 px-4 rounded;
-  }
+    .btn-secondary {
+        @apply bg-gray-500 text-white font-bold py-2 px-4 rounded lg:hover:bg-gray-600;
+    }
 
-  .stepper {
-    @apply md:mt-0 mt-5;
-  }
+    .stepper {
+        @apply md:mt-0 mt-5;
+    }
 }
 
 @layer base {
-  form {
-    @apply md:h-[700px] flex flex-col justify-between;
-  }
+    form {
+        @apply md:h-[700px] flex flex-col justify-between;
+    }
 
-  button[disabled] {
-    @apply cursor-not-allowed opacity-50;
-  }
+    button[disabled] {
+        @apply cursor-not-allowed opacity-50;
+    }
 }

@@ -78,7 +78,7 @@ const Preferences = (data: any) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="space-y-3">
-        <div className="space-x-3">
+        <div className="space-x-3 mb-3">
           <label htmlFor="receiveNotificationsByEmail">
             Receive Notifications By Email
           </label>
@@ -90,7 +90,11 @@ const Preferences = (data: any) => {
           />
         </div>
 
-        <div className="flex space-x-3">
+        <label className="font-bold my-3">
+          How did you hear about our service?
+        </label>
+
+        <div className="flex lg:space-x-3 lg:space-y-0 space-y-2 lg:flex-row flex-col">
           {Referrals.map((referral) => (
             <fieldset key={referral.value} className="space-x-2">
               <label htmlFor={referral.value}>{referral.label}</label>
@@ -121,7 +125,7 @@ const Preferences = (data: any) => {
         </div>
       </div>
 
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 stepper">
         <button
           type="button"
           onClick={() => setStep(step - 1)}

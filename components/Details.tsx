@@ -12,18 +12,24 @@ const PASSWORD_REGEX_MESSAGE =
 
 const schema = z
   .object({
-    username: z.string(),
+    username: z
+      .string()
+      .min(3, "Username must be at least 3 characters long")
+      .regex(/^[a-zA-Z\s._]*$/),
+
     password: z.string().min(8).regex(PASSWORD_REGEX, PASSWORD_REGEX_MESSAGE),
+
     confirmPassword: z
       .string()
       .min(8)
       .regex(PASSWORD_REGEX, PASSWORD_REGEX_MESSAGE),
-    userProfile: z.string().optional(),
-    dateOfBirth: z.string().optional(),
-    gender: z.string().optional(),
-    companyName: z.string().optional(),
-    companySize: z.string().optional(),
-    roleInCompany: z.string().optional(),
+
+    userProfile: z.string(),
+    dateOfBirth: z.string(),
+    gender: z.string(),
+    companyName: z.string().min(3),
+    companySize: z.string(),
+    roleInCompany: z.string().min(3),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",
@@ -77,7 +83,7 @@ const Details = (defaultValues: Props) => {
               label="Username"
               autoComplete="off"
               placeholder="Username"
-              // error={errors.username?.message}
+              error={errors.username?.message}
               {...field}
             />
           )}

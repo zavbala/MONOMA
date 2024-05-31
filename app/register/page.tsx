@@ -7,61 +7,9 @@ import Details from "@/components/Details";
 import Preferences from "@/components/Preferences";
 import { Provider, GlobalContext } from "@/context/Main";
 
-// @ts-ignore
-// export const GlobalContext = createContext({
-//   step: 1,
-//   setStep: (step: number) => {},
-//   data: {},
-//   setData: (data: any) => {},
-// });
-
 const Register = () => {
-  // const [step, setStep] = useState(1);
-
-  // const [data, setData] = useState({
-  //   fullName: "John Doe",
-  //   email: "john.doe@gmail.com",
-  //   phoneNumber: "5555555555",
-  //   address: "1234 Main St",
-  //   city: "Chicago",
-  //   zipCode: "60601",
-  //   country: "USA",
-  //   username: "johndoe",
-  //   password: "Password!9",
-  //   confirmPassword: "Password",
-  //   userProfile: "personal",
-
-  //   // Business
-  //   companySize: "11-50",
-  //   companyName: "Company",
-  //   roleInCompany: "Developer",
-
-  //   // Personal
-  //   dateOfBirth: new Date().toISOString().split("T")[0],
-  //   gender: "female",
-
-  //   referrer: "social-media",
-  //   receiveNotificationsByEmail: true,
-  //   termsAndConditions: false,
-  // });
-
-  // const { address, country, city, zipCode, ...personalData } = data;
-  // const { fullName, email, phoneNumber, ...addressData } = data;
-
-  // const detailsData = {
-  //   username: data.username,
-  //   password: data.password,
-  //   confirmPassword: data.confirmPassword,
-  //   userProfile: data.userProfile,
-  //   dateOfBirth: data.dateOfBirth,
-  //   gender: data.gender,
-  //   companyName: data.companyName,
-  //   roleInCompany: data.roleInCompany,
-  //   companySize: data.companySize,
-  // };
-
   return (
-    <section className="flex min-h-screen justify-center items-center">
+    <section className="flex min-h-screen justify-center items-center lg:px-0 px-5">
       <div className="card">
         <Provider>
           <Parent />
